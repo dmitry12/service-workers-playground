@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "chokidar": "^1.6.1",
+    "chokidar-cli": "^1.2.0",
     "eslint": "^3.17.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -15,6 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch": './node_modules/.bin/chokidar "src/**/*.js" -c "npm run build"'
   }
 }
