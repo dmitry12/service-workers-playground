@@ -1,37 +1,37 @@
 import React, { Component } from 'react';
+import './product.css';
+
 
 class Product extends Component {
 
     state = {
-        isOnline: true,
+      isOnline: true,
+      curProduct: {},
     }
 
     componentWillMount() {
-        this.setState({isOnline: navigator.onLine});
+      this.setState({isOnline: navigator.onLine});
     }
 
+    componentDidMount() {
+      this.setState({curProduct: window.json.products.find(this.findProduct)})
+    }
+
+    findProduct = (data) => data.id === parseInt(this.props.params.productId, 10);
+
     render() {
-        const id = parseInt(this.props.params.productId, 10);
-        const product = window.json.products.filter(product => {
-            if (product.id === id) {
-                return product;
-            }
-        })[0];
+      console.log(this.state);
 
         return (
             <div className="Product">
                 <div className="Product-header">
-                    <h2>{product.name}</h2>
+                    <h2>{this.state.curProduct.name}</h2>
+                </div>
+                <div className="Product-data">
+                  <img src={`https://dummyimage.com/250x250/000/fff&text=${this.state.curProduct.name}`} />
+                  <span>Some Text about product</span>
                 </div>
 
-                <p className="Product-info">
-                    <ul>
-                        <li>Point 1</li>
-                        <li>Point 2</li>
-                        <li>Point 3</li>
-                        <li>Point 4</li>
-                    </ul>
-                </p>
             </div>
         );
     }
