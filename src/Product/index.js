@@ -11,11 +11,19 @@ class Product extends Component {
     }
 
     render() {
+        const id = parseInt(this.props.params.productId, 10);
+        const product = window.json.products.filter(product => {
+            if (product.id === id) {
+                return product;
+            }
+        })[0];
+
         return (
             <div className="Product">
                 <div className="Product-header">
-                    <h2>Some Nice Product</h2>
+                    <h2>{product.name}</h2>
                 </div>
+
                 <p className="Product-info">
                     <ul>
                         <li>Point 1</li>
