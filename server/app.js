@@ -5,6 +5,7 @@ const app = express();
 
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
+
 app.get('/api/products', (req, res) => {
     res.json({
         products: [
