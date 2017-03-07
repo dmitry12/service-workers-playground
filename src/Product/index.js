@@ -14,7 +14,9 @@ class Product extends Component {
     }
 
     componentDidMount() {
-      this.setState({curProduct: window.json.products.find(this.findProduct)})
+      fetch('/api/product/' + this.props.params.productId)
+        .then((res) => res.json())
+        .then((res) => this.setState({ curProduct: res }));
     }
 
     findProduct = (data) => data.id === parseInt(this.props.params.productId, 10);
