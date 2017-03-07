@@ -4,7 +4,7 @@ self.addEventListener('install', function(event) {
             return cache.addAll([
                 '/',
                 '/static/css/main.17350c02.css',
-                '/static/js/main.js',
+                '/static/js/main.js', // TODO Need to add promise that will read from asset-manifest.json
                 '/products',
                 '/product',
                 '/api/products',

@@ -1,0 +1,3 @@
+- Fetch all static assets from build/asset-manifest.json and push them to service worker
+- Make /product/:productId cachable after visit
+- Figure out how to renew service worker without user noticing
