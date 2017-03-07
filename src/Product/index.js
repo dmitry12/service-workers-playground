@@ -11,19 +11,13 @@ class Product extends Component {
 
     componentWillMount() {
       this.setState({isOnline: navigator.onLine});
-    }
 
-    componentDidMount() {
       fetch('/api/product/' + this.props.params.productId)
         .then((res) => res.json())
         .then((res) => this.setState({ curProduct: res }));
     }
 
-    findProduct = (data) => data.id === parseInt(this.props.params.productId, 10);
-
     render() {
-      console.log(this.state);
-
         return (
             <div className="Product">
                 <div className="Product-header">
