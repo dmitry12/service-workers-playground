@@ -3,10 +3,8 @@ self.addEventListener('install', function(event) {
         caches.open('v1').then(function(cache) {
             return cache.addAll([
                 '/',
-                '/static/js/bundle.js',
-                '/static/media/logo.5d5d9eef.svg',
-                '/products',
-                '/product',
+                '/static/css/main.17350c02.css',
+                '/static/js/main.42b126e3.js',
             ]);
         })
     );
