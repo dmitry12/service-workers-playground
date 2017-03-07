@@ -7,7 +7,7 @@ import { ServiceWorker } from './serviceWorker';
 import { Router, Route, Link, browserHistory } from 'react-router'
 import './index.css';
 
-//ServiceWorker();
+ServiceWorker();
 
 window.json = {
     products: [

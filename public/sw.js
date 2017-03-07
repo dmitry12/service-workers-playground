@@ -5,6 +5,8 @@ self.addEventListener('install', function(event) {
                 '/',
                 '/static/js/bundle.js',
                 '/static/media/logo.5d5d9eef.svg',
+                '/products',
+                '/product',
             ]);
         })
     );
